@@ -21,6 +21,7 @@ async.doWhilst(
     }
 
     docClient.scan(params, (err, data) => {
+      console.log('data: ', data.Items);
       if (err) {
         console.log(err);
         callback(err, {});
@@ -56,8 +57,8 @@ async.doWhilst(
     if (err) {
       console.log(err);
     } else {
-      console.log(data);
-      console.log("Item Count", data.length);
+      // console.log(data);
+      // console.log("Item Count", data.length);
       console.log("Pages", pages);
     }
   }
